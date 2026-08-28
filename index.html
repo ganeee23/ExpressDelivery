@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ff5a1f">
+
+    <title>ExpressDelivery | Fresh Food Near You</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="topbar">
+
+    <div class="brand-container">
+
+        <div class="brand-logo">
+            ED
+        </div>
+
+        <div>
+            <div class="brand-name">
+                ExpressDelivery
+            </div>
+
+            <div class="location">
+                📍 21 Towers • 200–300 m delivery
+            </div>
+        </div>
+
+    </div>
+
+    <button class="whatsapp-small" onclick="openWhatsApp()">
+        💬 WhatsApp Us
+    </button>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="small-heading">
+            FAST SOCIETY DELIVERY
+        </span>
+
+        <h1>
+            Fresh food.
+            <br>
+            <span>Right at your door.</span>
+        </h1>
+
+        <p>
+            Fresh snacks, drinks and quick bites
+            delivered within your society.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button class="primary-button"
+                    onclick="scrollToMenu()">
+                🛒 Browse Menu
+            </button>
+
+            <button class="secondary-button"
+                    onclick="openWhatsApp()">
+                💬 WhatsApp Us
+            </button>
+
+        </div>
+
+        <div class="trust-items">
+
+            <span>⚡ Fast delivery</span>
+            <span>🏢 21 towers</span>
+            <span>💬 WhatsApp support</span>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-visual">
+
+        <div class="food-circle">
+            🍔
+        </div>
+
+        <div class="hero-info">
+
+            <strong>Hungry?</strong>
+
+            <span>
+                Choose your favourites in seconds.
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MENU ================= -->
+
+<section class="menu-section" id="menu">
+
+    <div class="menu-header">
+
+        <div>
+
+            <span class="small-heading">
+                TODAY'S MENU
+            </span>
+
+            <h2>
+                What are you craving?
+            </h2>
+
+        </div>
+
+        <div id="menuCount" class="menu-count">
+            100+ items
+        </div>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-container">
+
+        <span>🔎</span>
+
+        <input
+            id="searchInput"
+            type="search"
+            placeholder="Search dosa, maggie, coffee..."
+            oninput="renderMenu()">
+
+    </div>
+
+
+    <!-- CATEGORIES -->
+
+    <div id="categories" class="categories">
+    </div>
+
+</section>
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<section id="menuGrid" class="menu-grid">
+</section>
+
+
+<!-- ================= CART ================= -->
+
+<section class="cart-container" id="cartPanel">
+
+    <div class="cart-header">
+
+        <div>
+
+            <span class="small-heading">
+                YOUR ORDER
+            </span>
+
+            <h2>
+                🛒 Cart
+            </h2>
+
+        </div>
+
+        <button class="clear-cart"
+                onclick="clearCart()">
+            Clear
+        </button>
+
+    </div>
+
+
+    <div id="cartItems">
+
+        <div class="empty-cart">
+            Your cart is waiting for your first bite 😋
+        </div>
+
+    </div>
+
+
+    <!-- CART TOTAL -->
+
+    <div class="cart-summary">
+
+        <div class="summary-box">
+
+            <span>Total Items</span>
+
+            <strong id="cartQuantity">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="summary-box total-box">
+
+            <span>Total Amount</span>
+
+            <strong id="cartTotal">
+                ₹0
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <button class="checkout-button"
+            onclick="checkout()">
+
+        Proceed to Checkout →
+
+    </button>
+
+</section>
+
+
+<!-- ================= FLOATING WHATSAPP ================= -->
+
+<div class="floating-whatsapp"
+     onclick="openWhatsApp()">
+
+    💬
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <strong>
+        ExpressDelivery
+    </strong>
+
+    <span>
+        Fresh Snacks & Drinks
+    </span>
+
+    <span>
+        Serving 21 Towers • 200–300 m
+    </span>
+
+</footer>
+
+
+<!-- ================= CHECKOUT MODAL ================= -->
+
+<div id="checkoutModal"
+     class="modal-background">
+
+    <div class="checkout-modal">
+
+        <button class="close-modal"
+                onclick="closeCheckout()">
+            ×
+        </button>
+
+
+        <span class="small-heading">
+            FINAL STEP
+        </span>
+
+        <h2>
+            Checkout
+        </h2>
+
+        <p class="checkout-description">
+
+            Enter your details and send your order
+            directly to WhatsApp.
+
+        </p>
+
+
+        <form id="checkoutForm"
+              onsubmit="sendOrder(event)">
+
+
+            <!-- NAME -->
+
+            <label>
+
+                Your Name
+
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Enter your name"
+                    required>
+
+            </label>
+
+
+            <!-- MOBILE -->
+
+            <label>
+
+                Mobile Number
+
+                <input
+                    type="tel"
+                    id="customerPhone"
+                    placeholder="10-digit mobile number"
+                    maxlength="10"
+                    required>
+
+            </label>
+
+
+            <!-- TOWER -->
+
+            <label>
+
+                Tower Number
+
+                <input
+                    type="text"
+                    id="tower"
+                    placeholder="Example: A / B / 5"
+                    required>
+
+            </label>
+
+
+            <!-- FLAT -->
+
+            <label>
+
+                Flat Number
+
+                <input
+                    type="text"
+                    id="flat"
+                    placeholder="Example: 1204"
+                    required>
+
+            </label>
+
+
+            <!-- PAYMENT -->
+
+            <label>
+
+                Payment Method
+
+                <select id="payment">
+
+                    <option value="UPI">
+                        UPI
+                    </option>
+
+                    <option value="Cash on Delivery">
+                        Cash on Delivery
+                    </option>
+
+                </select>
+
+            </label>
+
+
+            <!-- INSTRUCTIONS -->
+
+            <label>
+
+                Delivery Instructions
+
+                <textarea
+                    id="instructions"
+                    placeholder="Example: Call me when you reach the building."></textarea>
+
+            </label>
+
+
+            <!-- FINAL SUMMARY -->
+
+            <div class="checkout-summary">
+
+                <div>
+
+                    <span>
+                        Total Items
+                    </span>
+
+                    <strong id="modalQuantity">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Total Amount
+                    </span>
+
+                    <strong id="modalTotal">
+                        ₹0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- SEND WHATSAPP -->
+
+            <button type="submit"
+                    class="send-whatsapp">
+
+                🟢 Send Order on WhatsApp
+
+            </button>
+
+
+            <p class="whatsapp-note">
+
+                Your order details will open in WhatsApp.
+
+            </p>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="menu.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
