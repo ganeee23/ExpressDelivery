@@ -357,6 +357,47 @@ const menuItems = [
         price: 150,
         description: "Protein-rich paneer bowl with a filling combination.",
         image: "https://th.bing.com/th/id/OIP.ZiMQvK9tCMgzep4VxSlTuwHaFL?w=278&h=195&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+    },
+    {
+        id: 43,
+        name: "Veg Fried Momos",
+        category: "Momos",
+        price: 100,
+        description: "Crispy fried momos with a delicious vegetable filling.",
+        image: "https://th.bing.com/th/id/OIP.uPGeeSla8mnORqFVEdcqTgHaFh?w=194&h=150&c=6&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+    },
+    {
+        id: 44,
+        name: "Chicken Fried Momos",
+        category: "Momos",
+        price: 130,
+        description: "Crispy fried momos with a delicious chicken filling.",
+        image: "https://th.bing.com/th/id/OIP.pGovV7ZPBgaRs3u4W7TgkAHaFj?w=230&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" 
+    },
+    {
+        id: 45,
+        name: "Paneer Fried Momos",
+        category: "Momos",
+        price: 120,
+        description: "Crispy fried momos with a delicious paneer filling.",
+        image: "https://www.mrcoconut.in/img/products/23_10_2021_15_53_506_pm.webp"
+    },
+    {
+        id: 46,
+        name: "Veg Steamed Momos",
+        category: "Momos",
+        price: 90,
+        description: "Soft steamed momos with a delicious vegetable filling.",
+        image: "https://th.bing.com/th/id/OIP.1ADnbN_nuP4_mGo7uHeK6gHaHa?w=163&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+    },
+    {
+        id: 47,
+        name: "Chicken Steamed Momos",
+        category: "Momos",
+        price: 110,
+        description: "Soft steamed momos with a delicious chicken filling.",
+        image: "https://th.bing.com/th/id/OIP.FHmX3vLEDmFes0t9ZRGPnwHaE8?w=258&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
     }
+
 
 ];
