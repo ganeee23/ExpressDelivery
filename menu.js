@@ -397,7 +397,16 @@ const menuItems = [
         price: 110,
         description: "Soft steamed momos with a delicious chicken filling.",
         image: "https://th.bing.com/th/id/OIP.FHmX3vLEDmFes0t9ZRGPnwHaE8?w=258&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
-    }
+    },
+    {
+    id: 48,
+    name: "Chicken Nuggets",
+    category: "Chicken",
+    price: 130,
+    quantity: "8 Pieces",
+    description: "8 Pieces of crispy and delicious chicken nuggets served hot.",
+    image: "https://th.bing.com/th/id/OIP.lyqzXJGoYYOgGDv8FRlL9AHaFj?w=221&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+}
 
 
 ];
